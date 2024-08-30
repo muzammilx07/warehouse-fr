@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Main from "./Pages/Main";
+import Details from "./Components/Details";
+import { DataProvider } from "./Contexts/DataContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataProvider>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/favorites" element={<Main />} />{" "}
+        {/* Adjust route if necessary */}
+      </Routes>
+    </DataProvider>
   );
 }
 
