@@ -19,7 +19,7 @@ const Navbar = () => {
           onClick={() => handleNavigation("home")}
           className="text-white text-lg font-bold"
         >
-          RECIPE<span className="text-2xl">4</span>YOU
+          WAREHOUSE
         </button>
         <button
           onClick={() => handleNavigation("favorites")}
